@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# This is a quick and dirty script there are no error checking
+
+#### Check for paru ####
+ISAUR=/sbin/paru
+if [ -f "$ISAUR" ]; then 
+    echo -e "paru was located, moving on.\n"   
+else 
+    echo "installing paru..."
+    ./inst-paru
+fi
+
+### Install all of the above pacakges ####
+read -n1 -rep 'Would you like to install the packages? (y,n)' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+    #Install package via pacman
+    sudo pacman -S pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session blueman ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar thunar xdg-desktop-portal-hyprland tumbler gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-passwordsafe gnome-disk-utility gvfs-mtp btop qbittorrent unzip thunar-archive-plugin file-roller xdg-user-dirs
+
+    #Install packages via paru (AUR)
+    echo -e "Installing packages from AUR...\n"
+    paru -S --noconfirm swaylock-effects catppuccin-gtk-theme-mocha xwaylandvideobridge-cursor-mode-2-git visual-studio-code-bin 
+fi
+
+### Copy Config Files ###
+read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
+if [[ $CFG == "Y" || $CFG == "y" ]]; then
+    echo -e "Copying config files...\n"
+    cp -R btop ~/.config/
+    cp -R dunst ~/.config/
+    cp -R hypr ~/.config/
+    cp -R kitty ~/.config/
+    cp -R neofetch ~/.config/
+    cp -R nvim ~/.config/
+    cp -R swaylock ~/.config/
+    cp -R waybar ~/.config/
+    cp -R wlogout ~/.config/
+    cp -R wofi ~/.config/
+    cp -R .p10k.zsh ~/
+    cp -R .zshrc ~/
+    chmod +x ~/.config/hypr/scripts/batterynotify.sh
+    chmod +x ~/.config/hypr/scripts/power.sh
+fi
+
+
+
+### Install ZSH ###
+read -n1 -rep 'Would you like to install zsh? (y,n)' ZIH
+if [[ $ZIH == "Y" || $ZIH == "y" ]]; then
+    echo -e "Installing zsh and plugins...\n"
+    paru -S --noconfirm zsh oh-my-zsh-git zsh-theme-powerlevel10k-git zsh-autosuggestions-git zsh-syntax-highlighting-git
+
+    echo -e "Copying config files...\n"
+    cp -R .p10k.zsh ~/
+    cp -R .zshrc ~/
+
+    echo -e "Setting zsh as default..\n"
+    chsh -s /usr/bin/zsh     
+fi
+
+systemctl enable --now bluetooth 
+systemctl enable --now NetworkManager
+
+### Script is done ###
+echo -e "Script completed.\n"
+echo -e "You can start Hyprland by typing Hyprland.\n"
+read -n1 -rep 'Would you like to start Hyprland now? (y,n)' HYP
+if [[ $HYP == "Y" || $HYP == "y" ]]; then
+    exec Hyprland
+else
+    exit
+fi
