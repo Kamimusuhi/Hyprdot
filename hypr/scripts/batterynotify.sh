@@ -8,5 +8,9 @@ while true; do
         dunstify -u CRITICAL "Battery Low" "Battery is at $battery_percentage%."
     fi
 
-    sleep 120  # Sleep for 2 minutes before checking again
+    if [ "$battery_status" == "Charging" ] && [ "$battery_percentage" -ge 95 ]; then
+        dunstify -u NORMAL "Battery Charged" "Battery is at $battery_percentage%."
+    fi
+
+    sleep 160
 done
