@@ -4,11 +4,11 @@
     "margin-top": 4,
     "margin-left": 8,
     "margin-right": 8,
-    "modules-left": ["custom/launcher", "cpu", "memory","wlr/workspaces", "hyprland/window"],
+    "modules-left": ["custom/launcher", "cpu", "memory","hyprland/workspaces", "hyprland/window"],
     "modules-center": ["custom/playerctlprev", "custom/playerctlpp", "custom/playerctlnext", "custom/playerlabel"],
     "modules-right": ["tray", "network", "battery", "temperature", "backlight", "pulseaudio","pulseaudio#microphone", "clock"],
 
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
         "format-icons": {
