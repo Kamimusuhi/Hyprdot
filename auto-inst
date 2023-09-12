@@ -13,7 +13,7 @@ fi
 
 sudo pacman -S pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session blueman ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar thunar xdg-desktop-portal-hyprland tumbler gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-passwordsafe gnome-disk-utility gvfs-mtp btop qbittorrent unzip thunar-archive-plugin file-roller android-tools xdg-user-dirs
 
-paru -S --noconfirm swaylock-effects catppuccin-gtk-theme-mocha xwaylandvideobridge-cursor-mode-2-git visual-studio-code-bin 
+paru -S --noconfirm swaylock-effects catppuccin-gtk-theme-mocha visual-studio-code-bin 
 
   echo -e "Copying config files...\n"
   cp -R btop ~/.config/
