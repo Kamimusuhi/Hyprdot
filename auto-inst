@@ -11,7 +11,7 @@ else
     ./inst-paru
 fi
 
-sudo pacman -S pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session blueman ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar xdg-desktop-portal-hyprland gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-disk-utility gvfs-mtp btop qbittorrent thunar tumbler unzip file-roller android-tools xdg-user-dirs
+sudo pacman -S pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session blueman ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar xdg-desktop-portal-hyprland gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-disk-utility gvfs-mtp btop qbittorrent thunar tumbler unzip file-roller android-tools xdg-user-dirs ranger python-pillow
 
 paru -S --noconfirm swaylock-effects catppuccin-gtk-theme-mocha visual-studio-code-bin 
 
@@ -20,15 +20,17 @@ paru -S --noconfirm swaylock-effects catppuccin-gtk-theme-mocha visual-studio-co
   cp -R dunst ~/.config/
   cp -R hypr ~/.config/
   cp -R kitty ~/.config/
+  cp -R mpv ~/.config/
   cp -R neofetch ~/.config/
-  cp -R nvim ~/.config/
-  cp -R swaylock ~/.config/
+  cp -R ranger ~/.config/
   cp -R waybar ~/.config/
   cp -R wofi ~/.config/
+
   cp -R .p10k.zsh ~/
   cp -R .zshrc ~/
   chmod +x ~/.config/hypr/scripts/batterynotify.sh
   chmod +x ~/.config/hypr/scripts/power.sh
+  chmod +x ~/.config/hypr/scripts/lookup.sh
 
 ### Install ZSH ###
 read -n1 -rep 'Would you like to install zsh? (y,n)' ZIH

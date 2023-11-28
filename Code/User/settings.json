@@ -1,0 +1,27 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "editor.fontSize": 14.5,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.cursorBlinking": "phase",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.minimap.side": "left",
+    "extensions.autoUpdate": false,
+    "terminal.external.linuxExec": "kitty",
+    "terminal.explorerKind": "both",
+    "terminal.sourceControlRepositoriesKind": "both",
+    "telemetry.telemetryLevel": "off",
+    "workbench.sideBar.location": "right",
+    "editor.minimap.renderCharacters": false,
+    "editor.renderWhitespace": "none",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorSurroundingLines": 1,
+    "editor.cursorWidth": 2,
+    "workbench.editor.showTabs": "single",
+    "workbench.statusBar.visible": false,
+}
+
+
+

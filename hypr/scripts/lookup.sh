@@ -3,7 +3,6 @@
 # Get the word from the clipboard using wl-clipboard
 word=$(wl-paste)
 
-# Check if the word is empty
 if [ -z "$word" ]; then
   notify-send "Clipboard is empty or doesn't contain a word."
   exit 1

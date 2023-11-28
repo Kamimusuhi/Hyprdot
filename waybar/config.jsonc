@@ -1,12 +1,12 @@
 {
-    "height": 20, // Waybar height (to be removed for auto height)
-    "layer": "top", // Waybar at top layer
+    "height": 20,
+    "layer": "top",
     "margin-top": 4,
     "margin-left": 8,
     "margin-right": 8,
-    "modules-left": ["custom/launcher", "cpu", "memory","hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["custom/playerctlprev", "custom/playerctlpp", "custom/playerctlnext", "custom/playerlabel"],
-    "modules-right": ["tray", "network", "battery", "temperature", "backlight", "pulseaudio","pulseaudio#microphone", "clock"],
+    "modules-left": ["custom/launcher", "cpu", "memory", "hyprland/window"],
+    "modules-center": ["clock", "hyprland/workspaces"],
+    "modules-right": ["tray", "network", "battery", "temperature", "backlight", "pulseaudio","pulseaudio#microphone"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -17,54 +17,6 @@
         }
     },
 
-    "custom/playerctlprev": {
-        "format": "{icon}",
-        "return-type": "json",
-        "max-length": 64,
-        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-        "on-click": "playerctl previous",
-        "format-icons": {
-          "Playing": "<span foreground='#E5B9C6'>󰒮</span>",
-          "Paused": "<span foreground='#928374'>󰒮</span>"
-        }
-      },
-    
-    "custom/playerctlpp": {
-      "format": "{icon}",
-      "return-type": "json",
-      "max-length": 64,
-      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-      "on-click": "playerctl play-pause",
-      "format-icons": {
-        "Playing": "<span foreground='#E5B9C6'> 󰏥 </span>",
-        "Paused": "<span foreground='#928374'> 󰐌 </span>"
-      }
-    },
-
-    "custom/playerctlnext": {
-        "format": "{icon}",
-        "return-type": "json",
-        "max-length": 2,
-        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-        "on-click": "playerctl next",
-        "format-icons": {
-          "Playing": "<span foreground='#E5B9C6'>󰒭</span>",
-          "Paused": "<span foreground='#928374'>󰒭</span>"
-        }
-      },
-  
-      "custom/playerlabel": {
-        "format": "<span>{}</span>",
-        "return-type": "json",
-        "max-length": 48,
-        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-        "on-click": "playerctl play-pause",
-        "format-icons": {
-          "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
-          "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
-        }
-      },
-    
     "hyprland/window": {
         "format": "{}"
     },
@@ -74,8 +26,8 @@
     },
 
     "clock": {
-        "format": "<span color='#bf616a'> </span>{:%I:%M %p} ",
-        "format-alt": "<span color='#bf616a'> </span>{:%a %b %d} "
+        "format": " {:%a %d - %H:%M} ",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
 
     "cpu": {
@@ -86,7 +38,7 @@
     
     "memory": {
         "interval": 30,
-        "format": "󰘚 {}%",
+        "format": "󰾆 {}%",
         "max-length": 10
     },
 
@@ -98,7 +50,7 @@
 
     "network": {
         "interval": 1,
-        "format-wifi": "  {essid}",
+        "format-wifi": "  {essid} ({signalStrength}%)",
         "format-alt": "󰯎 {bandwidthTotalBytes}",
         "format-disconnected": "Disconnected  ",
         "tooltip-format": "{ipaddr}/{cidr}"
@@ -106,7 +58,7 @@
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-bluetooth": "  {volume}%",
+        "format-bluetooth": "   {volume}%",
         "format-bluetooth-muted": " ",
         "format-muted": " Muted",
         "format-icons": {
@@ -130,10 +82,6 @@
         "scroll-step": 5
     },
 
-    "bluetooth": {
-        "format": " {status}"
-    },
-
     "temperature": {
         "format": " {temperatureC}°C",
         "format-alt": " {temperatureF}°F"
@@ -142,7 +90,7 @@
     "battery": {
       "bat": "BAT0",
       "adapter": "ADP0",
-      "interval": 60,
+      "interval": 20,
       "states": {
           "warning": 30,
           "critical": 20
