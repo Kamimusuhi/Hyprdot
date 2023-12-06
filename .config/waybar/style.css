@@ -42,14 +42,14 @@
   #tray,
   #window,
   #workspaces,
-  #custom-launcher,
+  #idle_inhibitor,
   #bluetooth {
     padding: 0 10px;
     color: #cdd6f4;
     background-color: #000000
   }
   
-  #custom-launcher {
+  #idle_inhibitor {
     color: #7287fd;
     border-radius: 10px 0px 0px 10px;
   }

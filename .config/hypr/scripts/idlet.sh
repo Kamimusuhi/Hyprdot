@@ -1,10 +1,9 @@
-#/bin/bash
+#!/bin/bash
 
-timeswaylock=300   # 5 minutes in seconds
-timeoff=360        # 6 minutes in seconds
+timeswaylock=300
+timeoff=320
 
-# Run swayidle with specified commands
 swayidle -w \
-    timeout $timeswaylock 'if ! pgrep -x "mpv" >/dev/null; then swaylock -f; fi' \
-    timeout $timeoff 'hyprctl dispatch dpms off' \
-    resume 'hyprctl dispatch dpms on'
+  timeout $timeswaylock '[ "$(waybarctl --get-config=idle_inhibitor.idle_pause_toggle)" != "true" ] && swaylock -f' \
+  timeout $timeoff 'hyprctl dispatch dpms off' \
+  resume 'hyprctl dispatch dpms on'
