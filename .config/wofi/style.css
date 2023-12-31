@@ -26,7 +26,7 @@ window {
 #outer-box {
   margin: 0;
   padding: 3px;
-  border: 2px solid #cba6f7;
+  border: 2px solid #5394c4;
   border-radius: 15px;
 }
 
@@ -49,6 +49,6 @@ window {
 }
 
 #entry:selected {
-  background: linear-gradient(90deg, #ca9ee6 0%, #c6a0f6 100%);
+  background: linear-gradient(90deg, #084354 20%, #5394c4 100%);
 }
 

@@ -1,10 +1,10 @@
 * {
-    font-size: 14px;
+    font-size: 16px;
     font-family: "JetBrainsMono Nerd Font", monospace;
   }
   
   window#waybar {
-    background: rgba(24, 24, 36, 0.3);
+    background: rgba(15, 15, 18, 0.2);
     color: #cdd6f4;
     border-radius: 10px;
   }
@@ -76,7 +76,7 @@
     border-radius: 10px;
     margin-right: 5px;
     background-color: #000000;
-    border: 1px solid #cba6f7;
+    border: 1px solid #5394c4;
   }
 
   #workspaces{
@@ -118,7 +118,7 @@
   #battery.charging,
   #battery.full,
   #battery.plugged {
-    color: #26a65b;
+    color: #46a65b;
   }
   
   @keyframes blink {
